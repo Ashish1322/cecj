@@ -1,0 +1,73 @@
+{% extends 'cecday/basic.html' %}
+{% block body %}
+<div class="container">
+
+
+<div class="text-center mt-4">
+    
+    <h1 class="headings" style="display: inline; color: #a73638;">Robo Competition</h1>
+  </div>
+<div class="row my-3">
+    <div class="col-md-6 col-xl-6 col-sm-12 col-12 p-4 ">
+     <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" width="100%" height="100%">
+    </div>
+    <div class="col-md-6 col-xl-6 col-sm-12 my-2 col-12  ">
+        <div class="p-2">
+            <h2 class="subheadings">Description</h2>
+            <p class="para-font px-3">Create your robots and display their advantages and applications. Display all the features and working of your robots using Power point Presentation.</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Mode: </strong>Online</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Participation: </strong>Maximum 3 members.</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Eligibility: </strong> Any Student Having a Valid ID card can participate</p>
+           
+        </div>
+        <a href="{% url 'roborace_register' %}" class="btn btn-primary mx-3">Register Now</a>
+    </div>
+</div>
+
+</div>
+<div class="container">
+    <h2 class="subheadings">Rules and Regulations</h2>
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item">Participating teams are required to make robots. Team can have a maximum of 3 members.</li>
+        <li class="list-group-item">Students can display the robo and its applications.</li>
+        <li class="list-group-item">PowerPoint presentation must be made to display the features of robots.</li>
+        <li class="list-group-item">The teams must explain at least one application of the robot made by them.</li>
+        <li class="list-group-item">The certificate of participation will be provided to all the participants.</li>
+      </ul>
+
+</div>
+
+<div class="container my-2">
+    <h2 class="subheadings">Coordinator Details</h2>
+    <p class="para-font">For any query regarding this event please contact the following Coordinators.</p>
+     <div class="text-center p-3">
+         <div class="row">
+             <div class="col-md-3 col">
+             {% load static %}
+                <img class="faces" src="{% static 'photo/yashika.jpeg' %}" alt="" height="100%" width="100%" style="border-radius: 50%;">
+             </div>
+             <div class="col-md-9 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; ">Yashika</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 7988022792</p>
+                <p class="co"><i class="fa fa-envelope"></i>  tishasharmays27@gmail.com </p>
+                <a href="https://wa.me/7988022792" class="btn btn-success" style="font-size: 20px;"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+         <div class="row mt-3">
+             <div class="col-md-3 col">
+             {% load static %}
+                <img class="faces" src="{% static 'photo/Vidyesha.jpeg' %}" alt="" height="100%" width="100%" style="border-radius: 50%;">
+             </div>
+             <div class="col-md-9 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; "> Vidyesha</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 7006209906</p>
+                <p class="co"><i class="fa fa-envelope"></i> balividyesha@gmail.com </p>
+                <a href="https://wa.me/7889626149" class="btn btn-success" style="font-size: 20px;"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+        
+     </div>
+</div>
+{% endblock body %}

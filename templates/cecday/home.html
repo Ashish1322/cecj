@@ -1,0 +1,372 @@
+{% extends "cecday/basic.html " %}
+
+
+{% block body %}
+
+
+<main>
+  {% load static %}
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+
+        <img src="{% static 'old/1.jpg' %}" class="d-block w-100" style="width: 1600px; height: 500px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'old/14.jpg' %}" class="d-block w-100" style="width: 1600px; height: 500px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'old/gallery15.jpg' %}" class="d-block w-100" style="width: 1600px; height: 500px;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container-fluid heading-bg">
+    <p class="text m-auto py-4" style="text-align: center;">Celebrating Engineer's day </p>
+  </div>
+  <div class="px-4 py-5 text-center" style="background-color: #659DBD;">
+    <img class="d-block mx-auto mb-3" src="https://image.freepik.com/free-vector/word-engineer-banner_66675-160.jpg"
+      alt="" width="100%" height="200px" style="border-radius: 10px;">
+    <h1 class="display-5 fw-bold">Engineer's day at CEC</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">We are organising different types of event on the occassion of Engineer's day. There are
+        severel type of technical or non technical events in which you can participate and show your creative skills by
+        creating something out of the box and win exciting prizes.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{% url 'all_event' %}" type="button" class="btn btn-warning btn-lg px-4 gap-3">Explore Events</a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="album py-1  " style="background-color: #EE4C7C;">
+    <div class="container p-3">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col box">
+          <div class="card shadow-sm box">
+            <img
+              src="https://1.bp.blogspot.com/-5EHv7CoHknU/YSRmJkU5ciI/AAAAAAAABPM/Xco3JTikhs42trN1yr6D0qsLvL4-kso4QCLcBGAsYHQ/s16000/1.PNG">
+
+
+          </div>
+        </div>
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img src="{% static 'old/gallery15.jpg' %}">
+
+          </div>
+        </div>
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img
+              src="https://1.bp.blogspot.com/-jQwXQdapFj4/YSRmRIJMlOI/AAAAAAAABPQ/_PG5Cmtn8AQiaC4tXZ83vo2H6-Nv5tfgACLcBGAsYHQ/s16000/2.PNG">
+
+
+          </div>
+        </div>
+
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img
+              src="https://1.bp.blogspot.com/-nVOO9KoNB34/YSRmamS6pfI/AAAAAAAABPY/TGtWeyfe6XMzEcCISyk8sheSKRgONATAACLcBGAsYHQ/s16000/3.PNG">
+
+
+          </div>
+        </div>
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img
+              src="https://1.bp.blogspot.com/-bwMlaOiE9Ig/YSRmoNEWNoI/AAAAAAAABPk/WPB_NyueIIgbTHEakQwXH_Z9LcxWYqIQwCLcBGAsYHQ/s16000/5.PNG">
+
+          </div>
+        </div>
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img src="{% static 'old/14.jpg' %}">
+
+
+          </div>
+        </div>
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img src="{% static 'old/gallery13.jpg' %}">
+
+
+          </div>
+        </div>
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img src="{% static 'old/gallery08.jpg' %}">
+
+
+          </div>
+        </div>
+        <div class="col box">
+          <div class="card shadow-sm">
+            <img src="{% static 'old/4.jpg' %}">
+
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="row p-3">
+      <div class="col-12 col-md-6  " style="text-align: center;">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/cIyMn_g41lE" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen autoplay></iframe>
+      </div>
+      <div class="col-12 col-md-6" style="text-align: center;">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/OtrX_-i27Hc" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid heading-bg">
+    <p class="text m-auto py-4" style="text-align: center;">Events To Be Organised</p>
+  </div>
+
+  <div class="album py-5 " style="background-color: #659DBD;">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
+              alt="">
+
+            <div class="card-body box">
+              <h3>CECJ-HACKATHON</h3>
+              <p class="card-text">Show your creativity in Hackathon. Showcase your Programming skills at the hackathon
+                . control over Technologies and create something out of the box.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'designathon' %}" type="button" class="btn btn-sm btn-outline-secondary">View
+                    Details</a>
+                  <a href="{% url 'designathon_register' %}" type="button"
+                    class="btn btn-sm btn-outline-secondary">Register</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      
+        <div class="col ">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="">
+
+            <div class="card-body box">
+              <h3>Artificial Intelligence and Data Science Workshop</h3>
+              <p class="card-text">Learn the technology of future, Artificial Intelligence and Data Science with the Workshop which will be provided by EESPL (Changing Ideas into Reality). </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'aiworkshop' %}" type="button" class="btn btn-sm btn-outline-secondary">View Details</a>
+                  <a href="{% url 'aiworkshop_register' %}" type="button" class="btn btn-sm btn-outline-secondary">Register</a>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+
+        <div class="col ">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1541359927273-d76820fc43f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+              alt="">
+
+            <div class="card-body box">
+              <h3>Collage making</h3>
+              <p class="card-text">A theme-based event to showcase your hidden talent. Put your ideas and thoughts on
+                either paper or canvas. The theme is "Contributions of India Engineers to the India/World". </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'collage_making' %}" type="button" class="btn btn-sm btn-outline-secondary">View
+                    Details</a>
+                  <a href="{% url 'collage_making_register' %}" type="button"
+                    class="btn btn-sm btn-outline-secondary">Register</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+      <div class="mt-4 " style="text-align: center;">
+        <a href="{% url 'all_event' %}" class="badge  bg-warning text-dark"
+          style="text-decoration: none; font-size: 15px;">
+          <i class="fa fa-refresh"></i> <strong>Load more..</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid" style="background-color: #EE4C7C; border: 1px solid pink;">
+
+
+    <div class="container py-3 mt-5">
+      <div class="row my-3 ">
+        <div class="col-12 col-sm-12 col-md-6 col-xl-6 ">
+          <div class="pt-5">
+            <h2 class="subheadings" style="font-size: 40px; color: wheat;">Message from President </h2>
+            <h3><strong>S. Rashpal Singh Dhaliwal</strong> </h3>
+            <p class="para-font">A heartly welcome from CGCians ,
+              We wish you a happy engineer’s day.
+              So , we are celebrating this day to encourage technological developments for the better and advanced
+              nation.
+              So, take part and compete with others to show the engineer in you!</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-xl-6 ">
+          <img src="https://www.cgc.edu.in/public/images/about/PRRR.png" alt="" width="90%">
+        </div>
+      </div>
+
+      <div class="row mt-3 mb-4">
+        <div id="aboutimage" class="col-12 col-sm-12 col-md-6 col-xl-6 order-sm-last  order-md-first order-last ">
+          <img
+            style="border-top-right-radius: 20%; border-top-left-radius: 5%; border-bottom-left-radius: 5%; border-bottom-right-radius: 5%;"
+            src="https://i.ytimg.com/vi/WoYbPULkuxU/maxresdefault.jpg" alt="" width="95%" height="100%">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-xl-6">
+          <div class="pt-5">
+            <h2 class="subheadings" style="font-size: 40px; color: wheat;">Message from Director.</h2>
+            <h3><strong> Dr. Rajneesh Talwar</strong></h3>
+            <p class="para-font" style="font-size: 22px;">On Behalf of Chandigarh Engineering College Jhanjeri, Welcome
+              all the participants to National Level Technical Event being held online on 15 Sep. 2021.Today the
+              Technology is changing very fast and we have to adapt to this rapid changing Technology. We need to learn
+              and contribute towards this rapid changing technology. Through this event it's just an attempt to give
+              everyone a taste of competition and to self analyze their knowledge. Hope to see a large participation.
+              Best luck to all participants. Congratulations to the organizing team</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid  " style="background-color: #659DBD; border: 1px solid #659DBD;">
+    <h3 class="subheadings text-center py-5" style="font-size: 35px; color: wheat;">Core Team Behind the Events</h3>
+    {% load static %}
+    <div class="row text-center my-4">
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/aariv.jpg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Syed Mohd. Arif</h3>
+        <p>(Prof. Transportation engg. & structure)</p>
+      </div>
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/anil.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Dr. Anil Kumar Lamba</h3>
+        <p>(Professor & Head CSE , AI & ML)</p>
+      </div>
+
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/n.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Nishtha Jain</h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/nitin.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Nitin Handa</h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6"><img class="faces" src="{% static 'photo/ashish.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Ashish Kumar
+        </h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/abhisek.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Abhishek Bhardwaj</h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/anant.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Anant Jain</h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6"><img class="faces" src="{% static 'photo/yashika.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Yashika
+        </h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+
+
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6"><img class="faces" src="{% static 'photo/shambhvi.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Shambhavi Singh
+        </h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/chaitnya.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Chaitanya Goswami</h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6"><img class="faces" src="{% static 'photo/vrnika.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Vrnika Jain
+        </h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+      <div class="col-md-6 col-12 col-sm-6 col-xl-6">
+        <img class="faces" src="{% static 'photo/Divyansh.jpeg' %}" alt="">
+        <h3 class=" mt-2" style="color: rgb(61, 57, 57);">Divyansh</h3>
+        <p>(Student-Coordinator)</p>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <div class="row container-fluid" style="background-color: #EE4C7C; ">
+    <h3 class="subheadings text-center py-5" style="font-size: 35px; color: wheat;">Our Sponsers</h3>
+    <div class="col-12 col-md-6 text-center">
+      <img src="{% static 'spon/1.png' %}" width="60%"   alt="">
+    </div>
+    <div class="col-12 col-md-6 text-center mt-4 ">
+     <img src="{% static 'spon/2.png' %}" width="55%" height="55%" alt="">
+    </div>
+    <div class="col-12 col-md-6 text-center">
+    <img src="{% static 'spon/3.png' %}" width="50%" height="50%" alt="">
+    </div>
+    <div class="col-12 col-md-6 text-center">
+    <img src="{% static 'spon/4.png' %}" width="50%" height="50%" alt="">
+    </div>
+  </div>
+</main>
+
+
+{% endblock body %}

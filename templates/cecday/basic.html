@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel = "icon" href ="{% static 'photo/ceclogo.png' %}"
+            type = "image/x-icon">
+        <title>Engineer's Day : CEC, Jhanjeri, Mohali</title>
+    {% block heading %}{% endblock heading %}
+    <style>
+    
+        .navbar-brand{
+            text-align: left;
+            padding: 12px;
+        }
+        
+            .list-unstyled{
+                text-decoration: none;
+            }
+        .text{
+            color: rgba(245, 245, 245, 0.884);
+            font-family: cursive;
+            font-weight:bolder;
+            font-size: 2.1em;
+            margin-bottom: 72px;
+            font-weight: bolder;
+            
+            
+            
+        }
+        .box {
+box-shadow: 5px 10px 7px rgb(151, 149, 149);
+border: 2px grey;
+
+}
+
+      .headings {
+        font-family: 'Righteous', cursive;
+        font-size: 42px;
+
+      }
+
+.box:hover {
+box-shadow: 5px 10px 7px rgb(119, 116, 116);
+}
+        .top{
+          background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 77%, rgba(9,6,1,1) 78%, rgba(205,142,16,1) 100%);   
+        }
+        .navbar{
+          background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 77%, rgba(9,6,1,1) 78%, rgba(205,142,16,1) 100%);
+        }
+        .heading-bg{
+          background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 50%, rgba(6,76,165,1) 100%);
+        }
+       
+        .subheadings {
+        font-family: 'Ubuntu', sans-serif;
+        color: rgb(85, 79, 79);
+        font-weight: 700;
+      }
+      .smallpara {
+        font-size: 20px;
+        color: rgb(47, 46, 46);
+      }
+      .para-font{
+    font-size: 26px;
+    
+}
+.faces{
+    width: 170px;
+    height: 170px;
+    border: 1px solid lightblue;
+    border-radius: 50px;
+}
+.co{
+  font-size: 20px;
+}
+{% block css %}{% endblock css %}
+            </style>
+  </head>  
+  <body>
+  <header> 
+    <div class="top">
+  <div class="collapse" id="navbarHeader">
+    
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white mx-3">Chandigarh Engineering College</h4>
+          <p class="text-muted mx-3">Endless Opportunities await you at Chandigarh Engineering College Jhanjeri, Mohali. We have been providing a range of advanced courses for students to excel and have a great future ahead..</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4 ">
+          <h4 class="text-white px-3">Go to</h4>
+          <ul class="list-unstyled px-3">
+            <li><a href="{% url 'technical_event' %}" class="text-light">Technical Events</a></li>
+            <li><a href="{% url 'non_technical_event' %}"  class="text-light">Non Technical Events</a></li>
+            <li><a href="https://www.cgc.ac.in/" class="text-light">Explore CEC</a></li>
+          </div>
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+{% load static %}
+  <div class="navbar navbar-light bg-gradient  shadow-sm bg-light">
+    <div class="container">
+      <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center py-1">
+        <img src="https://www.cgc.ac.in/images/full-logo.gif" alt="" height="90px" width="170px">
+      <img src="{% static 'photo/logo.png' %}" width="150px" height="90px">
+      
+      
+        
+      </a>
+    
+      <button class="btn btn-outline-dark mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+ {% for message in messages %}
+      <div class="alert container alert-{{message.tags}} alert-dismissible fade show " role="alert">
+    <strong>Message: </strong> {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+      {% endfor %}
+  {% block body %}{% endblock body %}
+  <footer class="text-muted py-5 bg-light">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#" class="badge  bg-warning text-dark" style="text-decoration: none; font-size: 15px;">
+        <i class="fa fa-arrow-alt-circle-up"></i> <strong>Back to Top</strong>
+      </a>
+    </p>
+    <div class="row">
+      <div class="col-md-3 col-12">
+       
+        <img src="https://www.cgc.ac.in/images/full-logo.gif" alt="" height="100%" width="100%">
+      </div>
+      <div class="col-12 col-md-9 py-3" >
+        <p class="mb-1" >Celebrating the Engineer's day at Chandigarh Engineering College Jhanjeri, Mohali.</p>
+        <p class="mb-0" >Bestowed with Excellence in Campus Placements Award by Honourable Capt. Amarinder Singh, CM Punjab</p>
+      </div>
+      
+     
+
+    </div>
+   
+  </div>
+</footer>
+    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+      
+  
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

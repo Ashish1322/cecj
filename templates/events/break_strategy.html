@@ -1,0 +1,88 @@
+{% extends 'cecday/basic.html' %}
+{% block body %}
+<div class="container">
+
+
+<div class="text-center mt-4">
+    
+    <h1 class="headings" style="display: inline; color: #a73638;">CECJ-CODATHON </h1>
+  </div>
+<div class="row my-3">
+    <div class="col-md-6 col-xl-6 col-sm-12 col-12 p-4 ">
+        <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" height="100%" width="100%">
+     
+    </div>
+    <div class="col-md-6 col-xl-6 col-sm-12 my-2 col-12  ">
+        <div class="p-2">
+            <h2 class="subheadings">Description</h2>
+            <p class="para-font px-3">MCQ, Coding Competition based on different programming languages  consist of 2 Rounds. Let’s venture together and have fun while coding.</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Mode: </strong>Online</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Participation: </strong>individual</p>
+        
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Duration: </strong>24 Hours</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Eligibility: </strong> Open to all</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Time: </strong>10:00 AM (14.09.2021) - 10:00 AM (15.09.2021)</p>
+        </div>
+        <a href="{% url 'break_strategy_register' %}" class="btn btn-primary mx-3">Register Now</a>
+    </div>
+</div>
+
+</div>
+<div class="container">
+    <h2 class="subheadings">Rules and Regulations</h2>
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item">This is going to be a 2 round event consisting of an MCQ round and a coding round.</li>
+        <li class="list-group-item">1st round will be held on Google Form Platform and It will consist of 20 Questions of the Easy to Medium difficulty level.</li>
+        <li class="list-group-item">After Successfully Attempting round 1 participants will be provided with a link to Round 2.</li>
+        <li class="list-group-item">Round 2 will be a coding round that will be held on the Hackerrank platform and It will consist of 4 interview level Questions with a difficulty level ranging from Medium to Hard.</li>
+        <li class="list-group-item">lagiarism is Strictly prohibited if found it will lead to disqualification of the participant.</li>
+        <li class="list-group-item">Participants must attempt both Round 1 as well as Round 2, then only they’ll be eligible for winning criteria and participation certificate.</li>
+        <li class="list-group-item">Link to Round 2 will be provided at the submission section of Round 1 Quiz. So participants must notice that.</li>
+        <li class="list-group-item">Ensure your network connectivity during the event as we will not be responsible for any of the inconvenience you suffer during submission</li>
+      </ul>
+    <h2 class="subheadings my-2">JUDGING CRITERIA</h2>
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item">Effective And Best Algorithm</li>
+        <li class="list-group-item">TimeSpan</li>
+        <li class="list-group-item">Concise Solution to a Problem.</li>
+        <li class="list-group-item">IN CASE OF A TIE IN ROUND 2 SCORE, THEN PARTICIPANTS HAVING A HIGHER SCORE IN ROUND 1 WILL BE SELECTED AS WINNERS.</li>
+     
+     
+      </ul>
+
+</div>
+
+<div class="container my-2">
+    <h2 class="subheadings">Coordinator Details</h2>
+    <p class="para-font">For any query regarding this event please contact the following Coordinators.</p>
+     <div class="text-center p-3">
+         <div class="row">
+             <div class="col-md-3 col">
+             {% load static %}
+                <img class="faces" src="{% static 'photo/sukant.jpeg' %}" alt="" height="100%" width="100%" style="border-radius: 50%;">
+             </div>
+             <div class="col-md-9 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; ">Sukant Dwivedi </h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 8419014108</p>
+          
+                <a href="https://wa.me/8419014108" class="btn btn-success" style="font-size: 20px;"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+         <div class="row mt-3">
+             <div class="col-md-3 col">
+             {% load static %}
+                <img class="faces" src="{% static 'photo/nitika.jpeg' %}" alt="" height="100%" width="100%" style="border-radius: 50%;">
+             </div>
+             <div class="col-md-9 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; ">Nitika</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 8427902234</p>
+               
+                <a href="https://wa.me/8427902234" class="btn btn-success" style="font-size: 20px;"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+        
+     </div>
+</div>
+{% endblock body %}

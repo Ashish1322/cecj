@@ -1,0 +1,60 @@
+{% extends 'cecday/basic.html' %}
+{% block body %}
+<div class="container">
+
+
+<div class="text-center mt-4">
+    
+    <h1 class="headings" style="display: inline; color: #a73638;">Tech-Quiz</h1>
+  </div>
+<div class="row my-3">
+    <div class="col-md-6 col-xl-6 col-sm-12 col-12 p-4 ">
+        <img src="https://images.unsplash.com/photo-1606326608690-4e0281b1e588?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" height="100%" width="100%">
+     
+    </div>
+    <div class="col-md-6 col-xl-6 col-sm-12 my-2 col-12  ">
+        <div class="p-2">
+            <h2 class="subheadings">Description</h2>
+            <p class="para-font px-3">Coding Quiz on all the Programming Languages on a Single sheet.Test your knowledge of Programming by registering in this event. Our aim is to  encourage students to achieve academic excellence and Increase their awareness of the world around</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Mode: </strong>Online</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Participation: </strong>Individual</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Prize: </strong>NIL</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Registration Fee: </strong>NIL</p>
+        </div>
+        <a href="{% url 'tech_quiz_register' %}"  class="btn btn-primary mx-3">Register Now</a>
+    </div>
+</div>
+
+</div>
+<div class="container">
+    <h2 class="subheadings">Rules and Regulations</h2>
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+
+</div>
+
+<div class="container my-2">
+    <h2 class="subheadings">Coordinator Details</h2>
+     <div class="text-center p-3">
+         <div class="row">
+             <div class="col-md-6 col">
+                <img src="https://cdn.pixabay.com/photo/2016/03/09/09/17/desktop-1245714_960_720.jpg" alt="" height="170px" width="170px" style="border-radius: 50%;">
+             </div>
+             <div class="col-md-6 col " style=" text-align: left;">
+            
+                <h3 class="mt-2" style="font-weight: 700;">Dr. Rajneesh Talwar </h3>
+                <p class="para-font">For any query regarding this event please contact the Coordinator Dr. Rajneesh Talwar through following details</p>
+                <a href="https://wa.me/7307320365" class="btn btn-success" style="font-size: 20px;"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+        
+        
+
+     </div>
+</div>
+{% endblock body %}

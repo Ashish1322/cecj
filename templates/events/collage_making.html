@@ -1,0 +1,74 @@
+{% extends 'cecday/basic.html' %}
+{% block body %}
+<div class="container">
+
+
+<div class="text-center mt-4">
+    
+    <h1 class="headings" style="display: inline; color: #a73638;">Collage making</h1>
+  </div>
+<div class="row my-3">
+    <div class="col-md-6 col-xl-6 col-sm-12 col-12 p-4 ">
+        <img src="https://images.unsplash.com/photo-1541359927273-d76820fc43f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"  alt="" height="100%" width="100%">
+     
+    </div>
+    <div class="col-md-6 col-xl-6 col-sm-12 my-2 col-12  ">
+        <div class="p-2">
+            <h2 class="subheadings">Description</h2>
+            <p class="para-font px-3">A theme-based event to showcase your hidden talent. Put your  ideas and thoughts on either paper or canvas. The theme is "Contributions  of Indian Engineers to the World". </p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Mode: </strong>Online</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Participation: </strong>Individual</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Eligibility: </strong>Any Student having a valid id card is eligible to participate</p>
+            
+        </div>
+        <a href="{% url 'collage_making_register' %}"class="btn btn-primary mx-3">Register Now</a>
+    </div>
+</div>
+
+</div>
+<div class="container">
+    <h2 class="subheadings">Rules and Regulations</h2>
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item">Students have to participate individually.</li>
+        <li class="list-group-item">Theme for collage should be followed.</li>
+        <li class="list-group-item">Time limit for collage making shall be 1 hour.</li>
+        <li class="list-group-item">Students should have  material such as Paper, Magazines, Glue, Scissor, Sketch Pen/colors etc. </li>
+        <li class="list-group-item">Judge’s decision shall be final and abiding.</li>
+      </ul>
+
+</div>
+
+<div class="container my-2">
+    <h2 class="subheadings">Coordinator Details</h2>
+    <p class="para-font">For any query regarding this event please contact the following Coordinators.</p>
+     <div class="text-center p-3">
+         <div class="row">
+             <div class="col-md-3 col">
+             {% load static %}
+                <img class="faces" src="{% static 'photo/n.jpeg' %}" alt="" height="100%" width="100%" style="border-radius: 50%;">
+             </div>
+             <div class="col-md-9 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; ">Nishtha jain</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 6283272343</p>
+                <p class="co"><i class="fa fa-envelope"></i>  bloomingflowers737@gmail.com</p>
+                <a href="https://wa.me/6283272343" class="btn btn-success" style="font-size: 20px;"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+         <div class="row mt-3">
+             <div class="col-md-3 col">
+             {% load static %}
+                <img class="faces" src="{% static 'photo/saiyam.jpg' %}" alt="" height="100%" width="100%" style="border-radius: 50%;">
+             </div>
+             <div class="col-md-9 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; ">Saiyam Mahajan</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 6239286731</p>
+                <p class="co"><i class="fa fa-envelope"></i> mahajansaiyam06@gmail.com</p>
+                <a href="https://wa.me/6239286731" class="btn btn-success" style="font-size: 20px;"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+        
+     </div>
+</div>
+{% endblock body %}

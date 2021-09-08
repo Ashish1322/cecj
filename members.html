@@ -1,0 +1,275 @@
+{% extends 'cecday/basic.html' %}
+{% block body %}
+ <div class="text-center mt-4">
+
+    <h1 class="headings" style="display: inline; color: #a73638;">Registration form for Event 'Electroinsight'</h1>
+
+</div>
+
+<div class="container">
+    <form method="POST" action="{% url 'designathon_register' %}" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        <!-- Details of 1s **********************************-->
+        <div class="mb-3">
+            <label for="teamname" class="form-label" >Team Name</label>
+            <input type="text" name="teamname" class="form-control" id="teamname" required>
+
+        </div>
+        <h4 class="subheadings mt-2">1st Team Member Details</h4>
+        <div class="mb-3">
+            <label for="exampleInputname1" class="form-label" >Full Name</label>
+            <input type="text" name="name1" class="form-control" id="exampleInpuname1" required>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                required>
+            <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
+        </div>
+        <div class="mb-3">
+            <label fo-="exampleInputPassword1" class="form-label">Phone Number</label>
+            <input name="phonenumber1" type="number" class="form-control" id="exampleInputPassword1" required>
+        </div>
+
+
+       <!-- details for 2nd ==================================-->
+        <h4 class="subheadings mt-2">2nd Team Member Details</h4>
+        <div class="mb-3">
+            <label for="exampleInputname2" class="form-label">Full Name</label>
+            <input type="text" name="name2" class="form-control" id="exampleInpuname2" required>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail2" class="form-label">Email address</label>
+            <input type="email" name="email2" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+                required>
+            <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
+        </div>
+        <div class="mb-3">
+            <label fo-="exampleInputPassword2" class="form-label">Phone Number</label>
+            <input name="phonenumber2" type="number" class="form-control" id="exampleInputPassword2" required>
+        </div>
+
+       <!-- details for 3rd ==================================-->
+ <h4 class="subheadings mt-2"> 3rd Team Member Details</h4>
+        <div class="mb-3">
+            <label for="exampleInputname3" class="form-label">Full Name</label>
+            <input type="text" name="name3" class="form-control" id="exampleInputname3" >
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail3" class="form-label">Email address</label>
+            <input type="email" name="email3" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp"
+                >
+            <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
+        </div>
+        <div class="mb-3">
+            <label fo-="exampleInputPassword3" class="form-label">Phone Number</label>
+            <input name="phonenumber3" type="number" class="form-control" id="exampleInputPassword3" value="0">
+        </div>
+
+        <!-- details for 4th ==================================-->
+        <h4 class="subheadings mt-2">4th Team Member Details</h4>
+        <div class="mb-3">
+            <label for="exampleInputname4" class="form-label">Full Name</label>
+            <input type="text" name="name4" class="form-control" id="exampleInputname4" >
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail4" class="form-label">Email address</label>
+            <input type="email" name="email4" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp"
+                >
+            <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
+        </div>
+        <div class="mb-3">
+            <label fo-="exampleInputPassword4" class="form-label">Phone Number</label>
+            <input name="phonenumber4" type="number" class="form-control" id="exampleInputPassword4" value="0">
+        </div>
+
+        <div class="my-2" style="width: 200px;">
+            <div class="row">
+                <div class="col-6 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="institution" id="flexRadioDefault1"
+                            value="college" onclick="college_name()" required>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            College
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="institution" id="flexRadioDefault2"
+                            value="school" onclick="school()" required>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            School
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="institution">
+
+        </div>
+
+
+        <div class="my-3" id="college_details">
+            <h4 class="subheadings">School Details</h4>
+            <div class="mb-3"><label for="college" class="form-label">School Name</label><input type="text"
+                    name="college" class="form-control" id="college" required></div>
+            <div class="mb-3"><label for="branch1" class="form-label">Class of 1st Member</label><input type="text"
+                    name="branch1" class="form-control" id="brach1" required></div>
+            <div class="mb-3"><label for="branch2" class="form-label">Class of 2nd Member</label><input type="text"
+                    name="branch2" class="form-control" id="brach2" required></div>
+            <div class="mb-3"><label for="branch3" class="form-label">Class of 3rd Member</label><input type="text"
+                    name="branch3" class="form-control" id="branch3" ></div>
+            <div class="mb-3"><label for="branch4" class="form-label">Class of 4th Member</label><input type="text"
+                    name="branch4" class="form-control" id="brach4" ></div>
+
+            <div class="mb-3" style="display: none;"><label for="semester1" class="form-label">Class</label><input
+                    type="number" name="semester1" class="form-control" id="semester1" value="0"></div>
+            <div class="mb-3" style="display: none;"><label for="semester2" class="form-label">Class</label><input
+                    type="number" name="semester2" class="form-control" id="semester2" value="0"></div>
+            <div class="mb-3" style="display: none;"><label for="semester3" class="form-label">Class</label><input
+                    type="number" name="semester3" class="form-control" id="semester3" value="0"></div>
+            <div class="mb-3" style="display: none;"><label for="semester4" class="form-label">Class</label><input
+                    type="number" name="semester4" class="form-control" id="semester4" value="0"></div>
+            <div class="mb-3" style="display: none"><label for="rollno1" class="form-label">College Roll
+                    Number</label><input type="number" name="rollno1" class="form-control" id="rollno1" value="0"></div>
+            <div class="mb-3" style="display: none"><label for="rollno2" class="form-label">College Roll
+                    Number</label><input type="number" name="rollno2" class="form-control" id="rollno2" value="0"></div>
+            <div class="mb-3" style="display: none"><label for="rollno3" class="form-label">College Roll
+                    Number</label><input type="number" name="rollno3" class="form-control" id="rollno3" value="0"></div>
+            <div class="mb-3" style="display: none"><label for="rollno4" class="form-label">College Roll
+                    Number</label><input type="number" name="rollno4" class="form-control" id="rollno4" value="0"></div>
+        </div>
+
+<!-- 
+        <div class="my-3" id="college_details">
+            <h4 class="subheadings">College Details</h4>
+            <div class="mb-3"><label for="college" class="form-label">College Name</label><input type="text"
+                    name="college" class="form-control" id="college" required></div>
+            <div class="mb-3"><label for="branch1" class="form-label">Branch of 1st Member</label><input type="text"
+                    name="branch1" class="form-control" id="branch1" required></div>
+            <div class="mb-3"><label for="rollno1" class="form-label">College Roll
+                    Number of 1st Member</label><input type="number" name="rollno1" class="form-control" id="rollno1" required>
+            </div>
+            <div class="mb-3"><label for="semester1" class="form-label">Semester of 1st Member</label><input
+                    type="number" name="semester1" class="form-control" id="semester1" required></div>
+            <div class="mb-3"><label for="branch2" class="form-label">Branch of 2nd Member</label><input type="text"
+                    name="branch2" class="form-control" id="branch2" required></div>
+            <div class="mb-3"><label for="rollno2" class="form-label">College Roll
+                    Number of 2nd Member</label><input type="number" name="rollno2" class="form-control" id="rollno2" required>
+            </div>
+            <div class="mb-3"><label for="semester2" class="form-label">Semester of 2nd Member</label><input
+                    type="number" name="semester2" class="form-control" id="semester2" required></div>
+         <div class="mb-3"><label for="branch3" class="form-label">Branch of 3rd Member</label><input type="text"
+                    name="branch3" class="form-control" id="branch3" ></div>
+            <div class="mb-3"><label for="rollno3" class="form-label">College Roll
+                    Number of 3rd Member</label><input type="number" value="0" name="rollno3" class="form-control" id="rollno3">
+            </div>
+             <div class="mb-3"><label for="semester3" class="form-label">Semester of 3rd Member</label><input
+                    type="number" name="semester3" class="form-control" id="semester3" value="0"></div>
+            <div class="mb-3"><label for="branch4" class="form-label">Branch of 4th Member</label><input type="text"
+                    name="branch4" class="form-control" id="branch4" ></div>
+            <div class="mb-3"><label for="rollno4" class="form-label">College Roll
+                    Number of 4th Member</label><input type="number" name="rollno4" class="form-control" value="0" id="rollno4">
+            </div>
+             <div class="mb-3"><label for="semester4" class="form-label">Semester of 4th Member</label><input
+                    type="number" name="semester4" class="form-control " value="0" id="semester4"></div>
+           
+        </div> -->
+
+        
+        <div class="mb-3">
+            <label for="file1">Id proof 1st Member(PDF, Max: 2MB):</label>
+            <input type="file" id="file1" name="file1" accept=".pdf" required>
+
+        </div>
+        <div class="mb-3">
+            <label for="file2">Id proof 2nd Member (PDF, Max: 2MB):</label>
+            <input type="file" id="file2" name="file2" accept=".pdf" required>
+
+        </div>
+        <div class="mb-3">
+            <label for="file3">Id proof 3rd Member(PDF, Max: 2MB):</label>
+            <input type="file" id="file3" name="file3" accept=".pdf" required >
+
+        </div>
+        <div class="mb-3">
+            <label for="file4">Id proof 4th Member (PDF, Max: 2MB):</label>
+            <input type="file" id="file4" name="file4" accept=".pdf" required>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script>
+
+    function school() {
+        var a = document.getElementById('institution');
+        a.innerHTML = ''
+    };
+
+
+</script>
+<script>
+    function college_name() {
+
+        var a = document.getElementById('institution');
+        a.innerHTML = ''
+
+    }
+</script>
+<script>
+    var uploadField = document.getElementById("file1");
+
+    uploadField.onchange = function () {
+        if (this.files[0].size > 2097152) {
+            alert("File is too big (max 2mb) !");
+            this.value = "";
+        };
+    };
+</script>
+<script>
+    var uploadField = document.getElementById("file2");
+
+    uploadField.onchange = function () {
+        if (this.files[0].size > 2097152) {
+            alert("File is too big (max 2mb)!");
+            this.value = "";
+        };
+    };
+</script>
+<script>
+    var uploadField = document.getElementById("file3");
+
+    uploadField.onchange = function () {
+        if (this.files[0].size > 2097152) {
+            alert("File is too big (max 2mb)!");
+            this.value = "";
+        };
+    };
+</script>
+<script>
+    var uploadField = document.getElementById("file4");
+
+    uploadField.onchange = function () {
+        if (this.files[0].size > 2097152) {
+            alert("File is too big (max 2mb)!");
+            this.value = "";
+        };
+    };
+</script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+{% endblock body %}
