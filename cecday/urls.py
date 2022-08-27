@@ -25,8 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('all-events',views.all_event,name="all_event"),
-    path('technical-events',views.tech_event,name="technical_event"),
-    path('non-technical-events',views.nont_tech_event,name="non_technical_event"),
+    path('about',views.about,name="about"),
     path('events/',include('events.urls'))
 
 ]

@@ -1,87 +1,95 @@
 {% extends 'cecday/basic.html' %}
 {% block body %}
- <div class="text-center mt-4">
 
-    <h1 class="headings" style="display: inline; color: #a73638;">Registration form for Event 'Project Display'</h1>
-
-</div>
 
 <div class="container">
+   
     <form method="POST" action="{% url 'project_display_register' %}" enctype="multipart/form-data">
 
         {% csrf_token %}
         <!-- Details of 1s **********************************-->
-        <p style="color: red;"> Fields with * are mandatory</p>
+        <p style="color: red;"> All the fields are  mandatory</p>
      
 
         <div class="mb-3">
-            <label for="teamname" class="form-label" >Team Name*</label>
+            <label for="teamname" class="form-label" >Team Name</label>
             <input type="text" name="teamname" class="form-control" id="teamname" required>
 
         </div>
+       
+
+        <div class="mb-3"><label for="college" class="form-label">School/College Name</label>
+            <input type="text" name="college" class="form-control" id="college" required></div>
         <div class="mb-3">
-            <label for="project" class="form-label" >Project Name*</label>
+            <label for="project" class="form-label" >Project Name</label>
             <input type="text" name="project" class="form-control" id="project" required>
 
         </div>
-        <h4 class="subheadings mt-2">1st Team Member Details (Leader)</h4>
+       
+        <h4 class="subheadings mt-2">1. Team Leader Details</h4>
         <div class="mb-3">
-            <label for="exampleInputname1" class="form-label" >Full Name*</label>
+            <label for="exampleInputname1" class="form-label" >Full Name</label>
             <input type="text" name="name1" class="form-control" id="exampleInpuname1" required>
 
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address*</label>
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" name="email1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 required>
             <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
         </div>
         <div class="mb-3">
-            <label fo-="exampleInputPassword1" class="form-label">Phone Number*</label>
+            <label fo-="exampleInputPassword1" class="form-label">Phone Number</label>
             <input name="phonenumber1" type="tel" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" id="exampleInputPassword1" required>
         </div>
-
-
-       <!-- details for 2nd ==================================-->
-        <h4 class="subheadings mt-2">2nd Team Member Details</h4>
+        <div class="mb-3"><label for="branch1" class="form-label">Branch/Class</label><input type="text"
+            name="branch1" class="form-control" id="branch1" required></div>
+    <div class="mb-3"><label for="rollno1" class="form-label">Roll Number</label><input type="number" name="rollno1" class="form-control" id="rollno1" required>
+    </div>
+    <div class="mb-3"><label for="semester1" class="form-label">Semester / Class</label><input
+            type="number" name="semester1" class="form-control" id="semester1" required></div>
+            <div class="mb-3">
+                <label for="file1">Id Proof(PDF, Max: 2MB):</label>
+                <input type="file" id="file1" name="file1" accept=".pdf" required>
+    
+            </div>
+        
+        
+        <!-- Container to add details of team member -->
+        <div id="memberForms">
+            <!-- First Team Member -->
+            <h4 class="subheadings mt-2">2. Member Details</h4>
         <div class="mb-3">
-            <label for="exampleInputname2" class="form-label">Full Name</label>
-            <input type="text" name="name2" class="form-control" id="exampleInpuname2" >
+            <label for="exampleInputname$2" class="form-label">Full Name</label>
+            <input type="text" name="name2" required class="form-control" id="exampleInpuname2" >
 
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail2" class="form-label">Email address</label>
-            <input type="email" name="email2" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+            <input type="email" name="email2" required class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
                 >
             <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
         </div>
         <div class="mb-3">
             <label fo-="exampleInputPassword2" class="form-label">Phone Number</label>
-            <input name="phonenumber2" type="tel" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" id="exampleInputPassword2" >
+            <input name="phonenumber2" required type="tel" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" id="exampleInputPassword2" >
         </div>
-
-        <div class="my-2" style="width: 200px;">
-            <div class="row">
-                <div class="col-6 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="institution" id="flexRadioDefault1"
-                            value="college" onclick="college_name()" required>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            College
-                        </label>
-                    </div>
-                </div>
-                <div class="col-6 col-md-6">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="institution" id="flexRadioDefault2"
-                            value="school" onclick="school()" required>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            School
-                        </label>
-                    </div>
-                </div>
+        <div class="mb-3"><label for="branch2" class="form-label">Branch/Class</label><input type="text"
+            name="branch2" class="form-control" id="branch2" required></div>
+    <div class="mb-3"><label for="rollno2" class="form-label">Roll Number</label><input type="number" name="rollno2" class="form-control" id="rollno2" required>
+    </div>
+    <div class="mb-3"><label for="semester2" class="form-label">Semester / Class</label><input
+            type="number" name="semester2" class="form-control" id="semester2" required></div>
+            <div class="mb-3">
+                <label for="file2">Id Proof(PDF, Max: 2MB):</label>
+                <input type="file" id="file2" name="file2" accept=".pdf" required>
+    
             </div>
-        </div>
+        </div> 
+
+        <button type="button" onclick="addTeamMember()" class="btn btn-primary my-3"> <i class="fa fa-plus"></i> Add Team Member </button>
+
+      
 
 
         <div id="institution">
@@ -95,89 +103,62 @@
         
 
         
-        <div class="mb-3">
-            <label for="file1">Id proof 1st Member(PDF, Max: 2MB)*:</label>
-            <input type="file" id="file1" name="file1" accept=".pdf" required>
-
-        </div>
+      
      
-        <div class="mb-3">
-            <label for="file2">Id proof 2nd Member (PDF, Max: 2MB):</label>
-            <input type="file" id="file2" name="file2" accept=".pdf" >
-
-        </div>
         
        
         
 
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="submit" class="btn btn-primary mb-4" />
     </form>
 </div>
 <script>
 
-    function school() {
-        var a = document.getElementById('institution');
-        a.innerHTML = `
-        <div class="my-3" id="college_details">
-            <h4 class="subheadings">School Details</h4>
-            <div class="mb-3"><label for="college" class="form-label">School Name*</label><input type="text"
-                    name="college" class="form-control" id="college" required></div>
-            <div class="mb-3"><label for="branch1" class="form-label">Class of 1st Member*</label><input type="text"
-                    name="branch1" class="form-control" id="brach1" required></div>
-            <div class="mb-3"><label for="branch2" class="form-label">Class of 2nd Member</label><input type="text"
-                    name="branch2" class="form-control" id="brach2" ></div>
-           
-           
+    function addTeamMember()
+    {
+        let count = (document.getElementById("memberForms").childElementCount)/8 + 1
+        if(count>=5)
+        {
+            alert("Maximum 5 Members are allowed")
+            return
+        }
+        let newMember = `<h4 class="subheadings mt-2">${count+1}. Member Details</h4>
+        <div class="mb-3">
+            <label for="exampleInputname${count+1}" class="form-label">Full Name</label>
+            <input required type="text" name="name${count+1}" class="form-control" id="exampleInpuname${count+1}" >
 
-            <div class="mb-3" style="display: none;"><label for="semester1" class="form-label">Class</label><input
-                    type="number" name="semester1" class="form-control" id="semester1" value="0"></div>
-            <div class="mb-3" style="display: none;"><label for="semester2" class="form-label">Class</label><input
-                    type="number" name="semester2" class="form-control" id="semester2" value="0"></div>
-            
-           
-            <div class="mb-3" style="display: none"><label for="rollno1" class="form-label">College Roll
-                    Number</label><input type="number" name="rollno1" class="form-control" id="rollno1" value="0"></div>
-            <div class="mb-3" style="display: none"><label for="rollno2" class="form-label">College Roll
-                    Number</label><input type="number" name="rollno2" class="form-control" id="rollno2" value="0"></div>
-         
-           
         </div>
-        `
-    };
+        <div class="mb-3">
+            <label for="exampleInputEmail${count+1}" class="form-label">Email address</label>
+            <input required type="email" name="email${count+1}" class="form-control" id="exampleInputEmail${count+1}" aria-describedby="emailHelp"
+                >
+            <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
+        </div>
+        <div class="mb-3">
+            <label fo-="exampleInputPassword${count+1}" class="form-label">Phone Number</label>
+            <input required name="phonenumber${count+1}" type="tel" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" id="exampleInputPassword${count+1}" >
+        </div>
+        <div class="mb-3"><label for="branch${count+1}" class="form-label">Branch/Class</label><input type="text" 
+            name="branch${count+1}" class="form-control" id="branch${count+1}" required></div>
+    <div class="mb-3"><label for="rollno${count+1}" class="form-label">Roll Number</label><input type="number" name="rollno${count+1}" class="form-control" id="rollno${count+1}" required>
+    </div>
+    <div class="mb-3"><label for="semester${count+1}" class="form-label">Semester / Class</label><input
+            type="number" name="semester${count+1}" class="form-control" id="semester${count+1}" required></div>
+            <div class="mb-3">
+                <label for="file${count+1}">Id Proof(PDF, Max: 2MB):</label>
+                <input type="file" id="file${count+1}" name="file${count+1}" accept=".pdf" required>
+    
+            </div>`
 
-
-</script>
-<script>
-    function college_name() {
-
-        var a = document.getElementById('institution');
-        a.innerHTML = `<div class="my-3" id="college_details">
-            <h4 class="subheadings">College Details</h4>
-            <div class="mb-3"><label for="college" class="form-label">College Name*</label><input type="text"
-                    name="college" class="form-control" id="college" required></div>
-            <div class="mb-3"><label for="branch1" class="form-label">Branch of 1st Member*</label><input type="text"
-                    name="branch1" class="form-control" id="branch1" required></div>
-            <div class="mb-3"><label for="rollno1" class="form-label">College Roll
-                    Number of 1st Member*</label><input type="number" name="rollno1" class="form-control" id="rollno1" required>
-            </div>
-            <div class="mb-3"><label for="semester1" class="form-label">Semester of 1st Member*</label><input
-                    type="number" name="semester1" class="form-control" id="semester1" required></div>
-            <div class="mb-3"><label for="branch2" class="form-label">Branch of 2nd Member</label><input type="text"
-                    name="branch2" class="form-control" id="branch2" ></div>
-            <div class="mb-3"><label for="rollno2" class="form-label">College Roll
-                    Number of 2nd Member</label><input type="number" name="rollno2" value="0" class="form-control" id="rollno2" >
-            </div>
-            <div class="mb-3"><label for="semester2" class="form-label">Semester of 2nd Member</label><input
-                    type="number" name="semester2" class="form-control" id="semester2" value='0'></div>
-         
-       
-           
-        </div> 
-        `
-
+       document.getElementById("memberForms").innerHTML+=newMember
     }
+
+
+
+
 </script>
+
 <script>
     var uploadField = document.getElementById("file1");
 

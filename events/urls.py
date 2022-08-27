@@ -31,6 +31,7 @@ urlpatterns = [
     path('cyberworkshop', views.cyberworkshop,name='cyberworkshop'),
     path('autocad', views.autocad,name='autocad'),
     path('inovationidea', views.inovationidea,name='inovationidea'),
+        path('dashboard',views.dashboard,name="dashboard"),
 
     # Urls for return form for every event
     path('designathon-register', views.designathon_register,name='designathon_register'), # CECJ-CODATHON 
@@ -42,8 +43,6 @@ urlpatterns = [
     path('project-display-register', views.project_display_register,name='project_display_register'),
     path('rangoli-register', views.rangoli_register,name='rangoli_register'),
     path('collage-making-register', views.collage_making_register,name='collage_making_register'),
-    path('aiworkshop-register', views.aiworkshop_register,name='aiworkshop_register'),
-    path('cyberworkshop-register', views.cyberworkshop_register,name='cyberworkshop_register'),
      path('autocad_register', views.autocad_register,name='autocad_register'),
      path('inovationidea_register', views.inovationidea_register,name='inovationidea_register'),
 ]
