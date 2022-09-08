@@ -1,0 +1,64 @@
+{% extends 'cecday/basic.html' %}
+{% block body %}
+<div class="container">
+
+
+<div class="row my-3">
+    <div class="col-md-6 col-xl-6 col-sm-12 col-12 p-4 ">
+        <img src="https://media.istockphoto.com/photos/concept-deep-learning-mindfulness-psychology-picture-id1256602985?b=1&k=20&m=1256602985&s=170667a&w=0&h=m5dLoiSafv4H1i8WPGx47PGgv6lR9CTQgvmJ-4rOcOk= " alt="" height="100%" width="100%">
+     
+    </div>
+    <div class="col-md-6 col-xl-6 col-sm-12 my-2 col-12  ">
+        <div class="p-2">
+            <h2 class="subheadings">Master Minds</h2>
+            <p class="para-font px-3">Display your Working/Non-working technical and innovative projects and show your creative ideas. Impliment your creative minds and create something new and Showcase your skills.</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Venue: </strong>Room no. 229 (LBlock -1</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Timings: </strong>10 am onwards</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Eligibility: </strong>Any Students from Mechanical Engineering Department having valid Id card can participate.</p>
+           
+        </div>
+        <a href="{% url 'masterminds_register' %}"  class="btn btn-primary mx-3">Register Now</a>
+    </div>
+</div>
+
+</div>
+<div class="container">
+    <h2 class="subheadings">Rules and Regulations</h2>
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item">Students have to participate individually (ONLINE)</li>
+        <li class="list-group-item">Theme for Rangoli must be clear.</li>
+        <li class="list-group-item">Time limit for rangoli making shall be 1 hour.</li>
+        <li class="list-group-item">Participants should have all required material.</li>
+        <li class="list-group-item">Judge’s decision shall be final and abiding.</li>
+      </ul>
+
+</div>
+
+
+<div class="container my-2">
+    <h2 class="subheadings">Coordinator Details</h2>
+    <p class="para-font">For any query regarding this event please contact the following Coordinators.</p>
+     <div class="text-center p-3">
+         <div class="row">
+            
+             <div class="col-md-6 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; "> Ajay Kumar</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 7807119660</p>
+                <p class="co"><i class="fa fa-envelope"></i>  ajaydogra182001@gmail.com</p>
+                <a href="https://wa.me/7807119660" class="btn-sm btn-success"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+ 
+             
+             <div class="col-md-6 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; "> Nitin Pant</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 9053769844</p>
+                <p class="co"><i class="fa fa-envelope"></i> Pantnitin246@gmail.com</p>
+                <a href="https://wa.me/9053769844" class="btn-sm btn-success"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+         </div>
+         </div>
+
+         {% endblock body %}

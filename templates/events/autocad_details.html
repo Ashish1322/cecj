@@ -1,0 +1,65 @@
+{% extends 'cecday/basic.html' %}
+{% block body %}
+<div class="container">
+
+
+<div class="row my-3">
+    <div class="col-md-6 col-xl-6 col-sm-12 col-12 p-4 ">
+        <img src="https://images.unsplash.com/photo-1629118938047-0f28bbe5af7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1933&q=80" alt="" height="100%" width="100%">
+     
+    </div>
+    <div class="col-md-6 col-xl-6 col-sm-12 my-2 col-12  ">
+        <div class="p-2">
+            <h2 class="subheadings">Auto Cad Competition</h2>
+            <p class="para-font px-3">Let's have fun with colors and make beautiful rangoli. Play with colors and create some amazing designs. </p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Venue: </strong>Cad Lab (216)</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Participation: </strong>2:00 pm - 3:00 pm</p>
+            <p class="para-font px-3 " style="font-size: 20px;"><strong>Eligibility: </strong>Any Students from Civil and Mechanical having valid id is eligible to participate in the event.
+</p>
+           
+        </div>
+        <a href="{% url 'autocad_register' %}"  class="btn btn-primary mx-3">Register Now</a>
+    </div>
+</div>
+
+</div>
+<div class="container">
+    <h2 class="subheadings">Rules and Regulations</h2>
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item">Students have to participate individually (ONLINE)</li>
+        <li class="list-group-item">Theme for Rangoli must be clear.</li>
+        <li class="list-group-item">Time limit for rangoli making shall be 1 hour.</li>
+        <li class="list-group-item">Participants should have all required material.</li>
+        <li class="list-group-item">Judge’s decision shall be final and abiding.</li>
+      </ul>
+
+</div>
+
+
+<div class="container my-2">
+    <h2 class="subheadings">Coordinator Details</h2>
+    <p class="para-font">For any query regarding this event please contact the following Coordinators.</p>
+     <div class="text-center p-3">
+         <div class="row">
+            
+             <div class="col-md-6 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; "> Divyansh Tripathi</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 8795566876</p>
+                <p class="co"><i class="fa fa-envelope"></i>  divyanshtripathi00007@gmail.com</p>
+                <a href="https://wa.me/8795566876" class="btn-sm btn-success"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+ 
+             
+             <div class="col-md-6 col " style=" text-align: left;">
+            
+                <h4 class="mt-2 " style="font-weight: 700; "> Parshant Puri</h4>
+                <p class="co"><i class="fa fa-phone fa-rotate-90"></i> +91 7973068898</p>
+                parshantpuri1971@gmail.com</p>
+                <a href="https://wa.me/7973068898" class="btn-sm btn-success"><i class="fa fa-whatsapp  "></i> Message on Whatsapp</a>
+             </div>
+         </div>
+        </div>
+    </div>
+
+         {% endblock body %}
