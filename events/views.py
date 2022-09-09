@@ -15,9 +15,8 @@ def dashboard(request):
     if(request.method=='POST'):
         username = request.POST['usernamee']
         password = request.POST['password']
-        events = ["Codathon","Presentation","Rangoli","Project Display"]
-        registrations = [CGCCODATHON.objects.all().count(), TechnicalPresentation.objects.all().count(),
-        Rangoli.objects.all().count(), ProjectDisplay.objects.all().count()]
+        events = ["Codathon","TechQuiz CS","Presentation","Project Display","Autocad","BoatOn","Robolympics","Techcharades","TechnicalCollage","Mechrelay","GD","MasterMinds","SurveyScout","TechQuiz CE","Bplan"]
+        registrations = [CGCCODATHON.objects.count(),TechQuiz.objects.count(),TechnicalPresentation.objects.count(),ProjectDisplay.objects.count(),Autocad.objects.count(),FloatingConcreteBoat.objects.count(),Robolympics.objects.count(),Techcharades.objects.count(),TechnicalCollage.objects.count(),Mechrelay.objects.count(),Groupdiscussion.objects.count(),Masterminds.objects.count(),Surveyscout.objects.count(),TechnicalquizCe.objects.count(),Bplan.objects.count()]
 
         collective = zip(events,registrations)
         total = sum(registrations)
@@ -518,19 +517,87 @@ def gd_register(request):
 def robolympics_register(request):
     
     if(request.method=="POST"):
-        file = request.FILES['id_proof']
-        name = request.POST['name']
-        email = request.POST['email']
-        phonenumber = request.POST['phonenumber']
-        instituion = request.POST['institution']
-        college_school = request.POST['college']
-        branch_class = request.POST['branch']
-        semester = int(request.POST['semester'])
-        rollno = int(request.POST['rollno'])
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        name1 = request.POST['name1']
+        phonenumber1 = request.POST['phonenumber1']
+        email1 = request.POST['email1']
+        branch1 = request.POST['branch1']
+        semester1 = request.POST['semester1']
+        rollno1 = request.POST['rollno1']
+        file1 = request.FILES['file1']
         event = request.POST['type']
-      
-        entry = Robolympics(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion, eventype=event)
-        entry.save()
+        # Check for 1 email
+
+       
+
+        a = Robolympics(college=college,teamname=teamname,name1=name1,email1=email1,branch1=branch1,semester1=semester1, eventype=event ,phone1 = phonenumber1,id1 = file1,rollno1=rollno1,)
+       
+
+        # 3rd Member details
+        try:
+            name3 = request.POST['name3']
+            phonenumbe3 = request.POST['phonenumber3']
+            email3 = request.POST['email3']
+            branch3 = request.POST['branch3']
+            semester3 = request.POST['semester3']
+            rollno3 =request.POST['rollno3']
+            file3 = request.FILES['file3']
+            a.name3 = name3
+            a.phone3 = phonenumbe3
+            a.email3 = email3
+            a.branch3 = branch3
+            a.semester3 = semester3
+            a.rollno3 = rollno3
+            a.id3 = file3
+            
+
+
+        except Exception as e:
+            pass
+
+        try:
+            name4 = request.POST['name4']
+            phonenumbe4 = request.POST['phonenumber4']
+            email4 = request.POST['email4']
+
+
+            branch4 = request.POST['branch4']
+            semester4  = request.POST['semester4']
+            rollno4 =request.POST['rollno4']
+            file4 = request.FILES['file4']
+            a.name4 = name4
+            a.phone4 = phonenumbe4
+            a.email4 = email4
+            a.branch4 = branch4
+            a.semester4 = semester4
+            a.rollno4 = rollno4
+            a.id4 = file4
+        except Exception as e:
+            pass
+
+         # 4th Member details
+        try:
+            name2 = request.POST['name2']
+            phonenumbe2 = request.POST['phonenumber2']
+            email2 = request.POST['email2']
+            branch2 = request.POST['branch2']
+            semester2 = request.POST['semester2']
+            rollno2 =request.POST['rollno2']
+            file2= request.FILES['file2']
+            a.name2 = name2
+            a.phone2 = phonenumbe2
+            a.email2 = email2
+            a.branch2 = branch2
+            a.semester2= semester2
+            a.rollno2 = rollno2
+            a.id2 = file2
+            a.id2 = file3
+            
+        except Exception as e:
+            pass
+        
+        a.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('robolympics_register')
 
