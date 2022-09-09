@@ -1,1 +1,108 @@
-tech charade regist
+
+{% extends 'cecday/basic.html' %}
+{% block body %}
+
+    
+
+
+<div class="container">
+ 
+    <form method="POST" action="{% url 'techcharades_register' %}"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="teamname" class="form-label" >Team Name</label>
+      <input type="text" name="teamname" class="form-control" id="teamname" required>
+
+  </div>
+ 
+
+  <div class="mb-3"><label for="college" class="form-label">College Name</label>
+      <input type="text" name="college" class="form-control" id="college" required></div>
+
+ 
+  <h4 class="subheadings mt-2">1. Team Leader Details (Mandatory)</h4>
+  <div class="mb-3">
+      <label for="exampleInputname1" class="form-label" >Full Name</label>
+      <input type="text" name="name1" class="form-control" id="exampleInpuname1" required>
+
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          required>
+      <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
+  </div>
+  <div class="mb-3">
+      <label fo-="exampleInputPassword1" class="form-label">Phone Number</label>
+      <input name="phonenumber1" type="tel" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" id="exampleInputPassword1" required>
+  </div>
+  <div class="mb-3"><label for="branch1" class="form-label">Branch</label><input type="text"
+      name="branch1" class="form-control" id="branch1" required></div>
+<div class="mb-3"><label for="rollno1" class="form-label">Roll Number</label><input type="number" name="rollno1" class="form-control" id="rollno1" required>
+</div>
+<div class="mb-3"><label for="semester1" class="form-label">Semester</label><input
+      type="number" name="semester1" class="form-control" id="semester1" required></div>
+      <div class="mb-3">
+          <label for="file1">Id Proof(PDF, Max: 2MB):</label>
+          <input type="file" id="file1" name="file1" accept=".pdf" required>
+
+      </div>
+  
+  
+  <!-- Container to add details of team member -->
+  <div id="memberForms">
+      <!-- First Team Member -->
+      <h4 class="subheadings mt-2">2. Member Details ( Mandatory )</h4>
+  <div class="mb-3">
+      <label for="exampleInputname$2" class="form-label">Full Name</label>
+      <input type="text" name="name2" required  class="form-control" id="exampleInpuname2" >
+
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputEmail2" class="form-label">Email address</label>
+      <input type="email" name="email2" required  class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+          >
+      <div id="emailHelp" class="form-text">Email address must be valid unless Registration not considered.</div>
+  </div>
+  <div class="mb-3">
+      <label fo-="exampleInputPassword2" class="form-label">Phone Number</label>
+      <input name="phonenumber2" required type="tel" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" id="exampleInputPassword2" >
+  </div>
+  <div class="mb-3"><label for="branch2" class="form-label">Branch/Class</label><input required type="text"
+      name="branch2" class="form-control" id="branch2" ></div>
+<div class="mb-3"><label for="rollno2" class="form-label">Roll Number</label><input required type="number" name="rollno2" class="form-control" id="rollno2" >
+</div>
+<div class="mb-3"><label for="semester2" class="form-label">Semester / Class</label><input
+      type="number" required name="semester2" class="form-control" id="semester2" ></div>
+      <div class="mb-3">
+          <label for="file2">Id Proof(PDF, Max: 2MB):</label>
+          <input required type="file" id="file2" name="file2" accept=".pdf" >
+
+      </div>
+  </div> 
+  <button type="submit" class="btn btn-primary">Submit</button>
+        
+      </form>
+</div>
+
+<script>
+  var uploadField = document.getElementById("file1");
+
+uploadField.onchange = function() {
+    if(this.files[0].size > 2097152){
+       alert("File is too big!");
+       this.value = "";
+    };
+};
+</script>
+<script>
+  var uploadField = document.getElementById("file2");
+
+uploadField.onchange = function() {
+    if(this.files[0].size > 2097152){
+       alert("File is too big!");
+       this.value = "";
+    };
+};
+</script>
+{% endblock body %}

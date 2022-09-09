@@ -1,7 +1,7 @@
 {% extends 'cecday/basic.html' %}
 {% block body %}
 
-technical presentation register
+
 <div class="container">
     <form method="POST" action="{% url 'technical_presentation_register' %} " enctype="multipart/form-data">
     {% csrf_token %}

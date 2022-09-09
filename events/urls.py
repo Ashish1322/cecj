@@ -35,6 +35,8 @@ urlpatterns = [
     path('mech-relay',views.mechrelays,name="mechrelays"),
     path('survey-scout',views.survey,name="survey"),
     path('technical-quiz-ce',views.techquizce,name="techquizce"),
+    path('b-plan',views.bplan,name="bplan"),
+
 
 
     path('break-the-strategy-register',views.break_strategy_register,name='break_strategy_register'), #CECJ-CODATHON 
@@ -51,6 +53,7 @@ urlpatterns = [
     path('autocad-register', views.autocad_register,name='autocad_register'),
     path('floating-concrete-register', views.floatingboat_register,name='floatingboat_register'),
     path('group-discussion-register', views.gd_register,name='gd_register'),
+    path('b-plan-register', views.bplan_register,name='bplan_register'),
 
 
 ]

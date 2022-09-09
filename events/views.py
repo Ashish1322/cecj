@@ -2,9 +2,9 @@
 from tkinter.tix import Tree
 from django.core.checks import messages
 from django.db import reset_queries
-from django.shortcuts import redirect, render,HttpResponse
+from django.shortcuts import redirect, render
 from django.contrib import messages
-from .models import  CGCCODATHON, TechQuiz, TechnicalPresentation,ProjectDisplay,Rangoli
+from .models import  CGCCODATHON, TechQuiz, TechnicalPresentation,ProjectDisplay,Autocad,FloatingConcreteBoat,Robolympics, Techcharades, TechnicalCollage, Mechrelay, Groupdiscussion, Masterminds, Surveyscout, TechnicalquizCe, Bplan
 
 
 
@@ -63,6 +63,9 @@ def techcollage(request):
 
 def autocad(request):
     return render(request,'events/autocad_details.html')
+
+def bplan(request):
+    return render(request,'events/bplan_details.html')
 
 def floatingboat(request):
     return render(request,'events/floatingboat_details.html')
@@ -242,9 +245,9 @@ def autocad_register(request):
         branch_class = request.POST['branch']
         semester = int(request.POST['semester'])
         rollno = int(request.POST['rollno'])
-       
-        
-      
+        entry = Autocad(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
+        entry.save()
+
         
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect("autocad")
@@ -254,18 +257,71 @@ def autocad_register(request):
 def mechrealy_register(request):
     
     if(request.method=="POST"):
-        file = request.FILES['id_proof']
-        name = request.POST['name']
-        email = request.POST['email']
-        phonenumber = request.POST['phonenumber']
-        instituion = request.POST['institution']
-        college_school = request.POST['college']
-        branch_class = request.POST['branch']
-        semester = int(request.POST['semester'])
-        rollno = int(request.POST['rollno'])
-      
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
-        entry.save()
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        name1 = request.POST['name1']
+        phonenumber1 = request.POST['phonenumber1']
+        email1 = request.POST['email1']
+        branch1 = request.POST['branch1']
+        semester1 = request.POST['semester1']
+        rollno1 = request.POST['rollno1']
+        file1 = request.FILES['file1']
+        # Check for 1 email
+
+        name2 = request.POST['name2']
+        phonenumbe2 = request.POST['phonenumber2']
+        email2 = request.POST['email2']
+        branch2 = request.POST['branch2']
+        semester2 = request.POST['semester2']
+        rollno2 =request.POST['rollno2']
+
+        a = Mechrelay(college=college,teamname=teamname,name1=name1,email1=email1,branch1=branch1,semester1=semester1,phone1 = phonenumber1,id1 = file1,rollno1=rollno1 , name2=name2,email2=email2,branch2=branch2,semester2=semester2,phone2 = phonenumbe2,rollno2=rollno2 )
+        file2 = request.FILES['file2']
+        a.id2 = file2
+
+        # 3rd Member details
+        try:
+            name3 = request.POST['name3']
+            phonenumbe3 = request.POST['phonenumber3']
+            email3 = request.POST['email3']
+            branch3 = request.POST['branch3']
+            semester3 = request.POST['semester3']
+            rollno3 =request.POST['rollno3']
+            file3 = request.FILES['file3']
+            a.name3 = name3
+            a.phone3 = phonenumbe3
+            a.email3 = email3
+            a.branch3 = branch3
+            a.semester3 = semester3
+            a.rollno3 = rollno3
+            a.id3 = file3
+
+
+        except Exception as e:
+            pass
+
+         # 4th Member details
+        try:
+            name4 = request.POST['name4']
+            phonenumbe4 = request.POST['phonenumber4']
+            email4 = request.POST['email4']
+
+
+            branch4 = request.POST['branch4']
+            semester4  = request.POST['semester4']
+            rollno4 =request.POST['rollno4']
+            file4 = request.FILES['file4']
+            a.name4 = name4
+            a.phone4 = phonenumbe4
+            a.email4 = email4
+            a.branch4 = branch4
+            a.semester4 = semester4
+            a.rollno4 = rollno4
+            a.id4 = file4
+        except Exception as e:
+            pass
+        
+        a.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('mechrelay_register')
     return render(request,'events/mechrelay_register.html')
@@ -283,7 +339,7 @@ def masterminds_register(request):
         semester = int(request.POST['semester'])
         rollno = int(request.POST['rollno'])
       
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
+        entry = Masterminds(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
         entry.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('masterminds_register')
@@ -291,18 +347,92 @@ def masterminds_register(request):
 
 def survey_register(request):
     if(request.method=="POST"):
-        file = request.FILES['id_proof']
-        name = request.POST['name']
-        email = request.POST['email']
-        phonenumber = request.POST['phonenumber']
-        instituion = request.POST['institution']
-        college_school = request.POST['college']
-        branch_class = request.POST['branch']
-        semester = int(request.POST['semester'])
-        rollno = int(request.POST['rollno'])
-      
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
-        entry.save()
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        name1 = request.POST['name1']
+        phonenumber1 = request.POST['phonenumber1']
+        email1 = request.POST['email1']
+        branch1 = request.POST['branch1']
+        semester1 = request.POST['semester1']
+        rollno1 = request.POST['rollno1']
+        file1 = request.FILES['file1']
+        # Check for 1 email
+
+        name2 = request.POST['name2']
+        phonenumbe2 = request.POST['phonenumber2']
+        email2 = request.POST['email2']
+        branch2 = request.POST['branch2']
+        semester2 = request.POST['semester2']
+        rollno2 =request.POST['rollno2']
+
+        a = Surveyscout(college=college,teamname=teamname,name1=name1,email1=email1,branch1=branch1,semester1=semester1,phone1 = phonenumber1,id1 = file1,rollno1=rollno1 , name2=name2,email2=email2,branch2=branch2,semester2=semester2,phone2 = phonenumbe2,rollno2=rollno2 )
+        file2 = request.FILES['file2']
+        a.id2 = file2
+
+        # 3rd Member details
+        try:
+            name3 = request.POST['name3']
+            phonenumbe3 = request.POST['phonenumber3']
+            email3 = request.POST['email3']
+            branch3 = request.POST['branch3']
+            semester3 = request.POST['semester3']
+            rollno3 =request.POST['rollno3']
+            file3 = request.FILES['file3']
+            a.name3 = name3
+            a.phone3 = phonenumbe3
+            a.email3 = email3
+            a.branch3 = branch3
+            a.semester3 = semester3
+            a.rollno3 = rollno3
+            a.id3 = file3
+
+
+        except Exception as e:
+            pass
+
+         # 4th Member details
+        try:
+            name4 = request.POST['name4']
+            phonenumbe4 = request.POST['phonenumber4']
+            email4 = request.POST['email4']
+
+
+            branch4 = request.POST['branch4']
+            semester4  = request.POST['semester4']
+            rollno4 =request.POST['rollno4']
+            file4 = request.FILES['file4']
+            a.name4 = name4
+            a.phone4 = phonenumbe4
+            a.email4 = email4
+            a.branch4 = branch4
+            a.semester4 = semester4
+            a.rollno4 = rollno4
+            a.id4 = file4
+        except Exception as e:
+            pass
+        
+         # 5th Member details
+        try:
+            name5 = request.POST['name5']
+            phonenumbe5 = request.POST['phonenumber5']
+            email5 = request.POST['email5']
+
+            branch5 = request.POST['branch5']
+            semester5  = request.POST['semester5']
+            rollno5 =request.POST['rollno5']
+            file5 = request.FILES['file5']
+            a.name5 = name5
+            a.phone5 = phonenumbe5
+            a.email5 = email5
+            a.branch5 = branch5
+            a.semester5 = semester5
+            a.rollno5 = rollno5
+            a.id5 = file5
+     
+
+        except Exception as e:
+            pass
+        a.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('surveyscout_register')
     return render(request,'events/surveyscout_register.html')
@@ -329,21 +459,42 @@ def tech_quiz_register(request):
 def tech_quiz_ce(request):
     
     if(request.method=="POST"):
-        file = request.FILES['id_proof']
-        name = request.POST['name']
-        email = request.POST['email']
-        phonenumber = request.POST['phonenumber']
-        instituion = request.POST['institution']
-        college_school = request.POST['college']
-        branch_class = request.POST['branch']
-        semester = int(request.POST['semester'])
-        rollno = int(request.POST['rollno'])
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        file = request.FILES['file1']
+        name = request.POST['name1']
+        email = request.POST['email1']
+        phonenumber = request.POST['phonenumber1']
+
+        branch_class = request.POST['branch1']
+        semester = int(request.POST['semester1'])
+        rollno = int(request.POST['rollno1'])
       
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
-        entry.save()
+        a = TechnicalquizCe(name=name,email=email,phone=phonenumber,college_school=college,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file, teamname=teamname)
+        a.save()
+
+        # 3rd Member details
+        try:
+            name2 = request.POST['name2']
+            phonenumbe2 = request.POST['phonenumber2']
+            email2 = request.POST['email2']
+            branch2 = request.POST['branch2']
+            semester2 = request.POST['semester2']
+            rollno2 =request.POST['rollno2']
+            file2 = request.FILES['file2']
+            a.name2 = name2
+            a.phone2 = phonenumbe2
+            a.email2 = email2
+            a.branch2 = branch2
+            a.semester2= semester2
+            a.rollno2 = rollno2
+            a.id2 = file2
+            a.save()
+        except Exception as e:
+            pass
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('techquizce_register')
-    return render(request,'events/tech_quiz_register.html')
+    return render(request,'events/technicalquizce_register.html')
 
 def gd_register(request):
     
@@ -358,7 +509,7 @@ def gd_register(request):
         semester = int(request.POST['semester'])
         rollno = int(request.POST['rollno'])
       
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
+        entry = Groupdiscussion(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
         entry.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('gd_register')
@@ -376,29 +527,54 @@ def robolympics_register(request):
         branch_class = request.POST['branch']
         semester = int(request.POST['semester'])
         rollno = int(request.POST['rollno'])
+        event = request.POST['type']
       
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
+        entry = Robolympics(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion, eventype=event)
         entry.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('robolympics_register')
+
     return render(request,'events/robolympics_register.html')
 
 
 def techcharades_register(request):
     
     if(request.method=="POST"):
-        file = request.FILES['id_proof']
-        name = request.POST['name']
-        email = request.POST['email']
-        phonenumber = request.POST['phonenumber']
-        instituion = request.POST['institution']
-        college_school = request.POST['college']
-        branch_class = request.POST['branch']
-        semester = int(request.POST['semester'])
-        rollno = int(request.POST['rollno'])
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        file = request.FILES['file1']
+        name = request.POST['name1']
+        email = request.POST['email1']
+        phonenumber = request.POST['phonenumber1']
+
+        branch_class = request.POST['branch1']
+        semester = int(request.POST['semester1'])
+        rollno = int(request.POST['rollno1'])
       
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
-        entry.save()
+        a = Techcharades(name=name,email=email,phone=phonenumber,college_school=college,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,teamname=teamname)
+        a.save()
+
+        # 3rd Member details
+        try:
+            name2 = request.POST['name2']
+            phonenumbe2 = request.POST['phonenumber2']
+            email2 = request.POST['email2']
+            branch2 = request.POST['branch2']
+            semester2 = request.POST['semester2']
+            rollno2 =request.POST['rollno2']
+            file2 = request.FILES['file2']
+            a.name2 = name2
+            a.phone2 = phonenumbe2
+            a.email2 = email2
+            a.branch2 = branch2
+            a.semester2= semester2
+            a.rollno2 = rollno2
+            a.id2 = file2
+            a.save()
+
+
+        except Exception as e:
+            pass
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('techcharades_register')
     return render(request,'events/techcharades_register.html')
@@ -407,37 +583,205 @@ def techcharades_register(request):
 def techcollage_register(request):
     
     if(request.method=="POST"):
-        file = request.FILES['id_proof']
-        name = request.POST['name']
-        email = request.POST['email']
-        phonenumber = request.POST['phonenumber']
-        instituion = request.POST['institution']
-        college_school = request.POST['college']
-        branch_class = request.POST['branch']
-        semester = int(request.POST['semester'])
-        rollno = int(request.POST['rollno'])
-      
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
-        entry.save()
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        name1 = request.POST['name1']
+        phonenumber1 = request.POST['phonenumber1']
+        email1 = request.POST['email1']
+        branch1 = request.POST['branch1']
+        semester1 = request.POST['semester1']
+        rollno1 = request.POST['rollno1']
+        file1 = request.FILES['file1']
+        # Check for 1 email
+
+       
+
+        a = TechnicalCollage(college=college,teamname=teamname,name1=name1,email1=email1,branch1=branch1,semester1=semester1,phone1 = phonenumber1,id1 = file1,rollno1=rollno1)
+       
+
+        # 3rd Member details
+        try:
+            name3 = request.POST['name3']
+            phonenumbe3 = request.POST['phonenumber3']
+            email3 = request.POST['email3']
+            branch3 = request.POST['branch3']
+            semester3 = request.POST['semester3']
+            rollno3 =request.POST['rollno3']
+            file3 = request.FILES['file3']
+            a.name3 = name3
+            a.phone3 = phonenumbe3
+            a.email3 = email3
+            a.branch3 = branch3
+            a.semester3 = semester3
+            a.rollno3 = rollno3
+            a.id3 = file3
+            
+
+
+        except Exception as e:
+            pass
+
+         # 4th Member details
+        try:
+            name2 = request.POST['name2']
+            phonenumbe2 = request.POST['phonenumber2']
+            email2 = request.POST['email2']
+            branch2 = request.POST['branch2']
+            semester2 = request.POST['semester2']
+            rollno2 =request.POST['rollno2']
+            file2= request.FILES['file2']
+            a.name2 = name2
+            a.phone2 = phonenumbe2
+            a.email2 = email2
+            a.branch2 = branch2
+            a.semester2= semester2
+            a.rollno2 = rollno2
+            a.id2 = file2
+            a.id2 = file3
+            
+        except Exception as e:
+            pass
+        
+        a.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('techcollage_register')
     return render(request,'events/techcollage_register.html')
 
 def floatingboat_register(request):
+
     
     if(request.method=="POST"):
-        file = request.FILES['id_proof']
-        name = request.POST['name']
-        email = request.POST['email']
-        phonenumber = request.POST['phonenumber']
-        instituion = request.POST['institution']
-        college_school = request.POST['college']
-        branch_class = request.POST['branch']
-        semester = int(request.POST['semester'])
-        rollno = int(request.POST['rollno'])
-      
-        entry = TechQuiz(name=name,email=email,phone=phonenumber,college_school=college_school,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file,type_institution=instituion)
-        entry.save()
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        name1 = request.POST['name1']
+        phonenumber1 = request.POST['phonenumber1']
+        email1 = request.POST['email1']
+        branch1 = request.POST['branch1']
+        semester1 = request.POST['semester1']
+        rollno1 = request.POST['rollno1']
+        file1 = request.FILES['file1']
+        # Check for 1 email
+
+
+
+        name2 = request.POST['name2']
+        phonenumbe2 = request.POST['phonenumber2']
+        email2 = request.POST['email2']
+        branch2 = request.POST['branch2']
+        semester2 = request.POST['semester2']
+        rollno2 =request.POST['rollno2']
+
+        a = FloatingConcreteBoat(college=college,teamname=teamname,name1=name1,email1=email1,branch1=branch1,semester1=semester1,phone1 = phonenumber1,id1 = file1,rollno1=rollno1 , name2=name2,email2=email2,branch2=branch2,semester2=semester2,phone2 = phonenumbe2,rollno2=rollno2)
+        file2 = request.FILES['file2']
+        a.id2 = file2
+
+        # 3rd Member details
+        try:
+            name3 = request.POST['name3']
+            phonenumbe3 = request.POST['phonenumber3']
+            email3 = request.POST['email3']
+            branch3 = request.POST['branch3']
+            semester3 = request.POST['semester3']
+            rollno3 =request.POST['rollno3']
+            file3 = request.FILES['file3']
+            a.name3 = name3
+            a.phone3 = phonenumbe3
+            a.email3 = email3
+            a.branch3 = branch3
+            a.semester3 = semester3
+            a.rollno3 = rollno3
+            a.id3 = file3
+
+
+        except Exception as e:
+            pass
+
+         # 4th Member details
+        try:
+            name4 = request.POST['name4']
+            phonenumbe4 = request.POST['phonenumber4']
+            email4 = request.POST['email4']
+
+
+            branch4 = request.POST['branch4']
+            semester4  = request.POST['semester4']
+            rollno4 =request.POST['rollno4']
+            file4 = request.FILES['file4']
+            a.name4 = name4
+            a.phone4 = phonenumbe4
+            a.email4 = email4
+            a.branch4 = branch4
+            a.semester4 = semester4
+            a.rollno4 = rollno4
+            a.id4 = file4
+        except Exception as e:
+            pass
+        
+         # 5th Member details
+        try:
+            name5 = request.POST['name5']
+            phonenumbe5 = request.POST['phonenumber5']
+            email5 = request.POST['email5']
+
+            branch5 = request.POST['branch5']
+            semester5  = request.POST['semester5']
+            rollno5 =request.POST['rollno5']
+            file5 = request.FILES['file5']
+            a.name5 = name5
+            a.phone5 = phonenumbe5
+            a.email5 = email5
+            a.branch5 = branch5
+            a.semester5 = semester5
+            a.rollno5 = rollno5
+            a.id5 = file5
+
+        except Exception as e:
+            pass
+
+        # If all the emails are unique only then we are saving entry
+        a.save()
         messages.success(request,"Registration successfull. Thankyou for registration.")
         return redirect('floatingboat_register')
     return render(request,'events/floatingboat_register.html')
+
+
+def bplan_register(request):
+    if(request.method=='POST'):
+        teamname = request.POST['teamname']
+        college = request.POST['college']
+        file = request.FILES['file1']
+        name = request.POST['name1']
+        email = request.POST['email1']
+        phonenumber = request.POST['phonenumber1']
+
+        branch_class = request.POST['branch1']
+        semester = int(request.POST['semester1'])
+        rollno = int(request.POST['rollno1'])
+      
+        a = Bplan(name=name,email=email,phone=phonenumber,college_school=college,branch_class=branch_class,semester=semester,roll_no=rollno,id1=file, teamname=teamname)
+        a.save()
+
+        # 3rd Member details
+        try:
+            name2 = request.POST['name2']
+            phonenumbe2 = request.POST['phonenumber2']
+            email2 = request.POST['email2']
+            branch2 = request.POST['branch2']
+            semester2 = request.POST['semester2']
+            rollno2 =request.POST['rollno2']
+            file2 = request.FILES['file2']
+            a.name2 = name2
+            a.phone2 = phonenumbe2
+            a.email2 = email2
+            a.branch2 = branch2
+            a.semester2= semester2
+            a.rollno2 = rollno2
+            a.id2 = file2
+            a.save()
+        except Exception as e:
+            pass
+
+        
+        messages.success(request,"Registration successfull. Thankyou for registration.")
+        return redirect("bplan")
+    return render(request,'events/bplan_register.html')

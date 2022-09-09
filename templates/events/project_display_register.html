@@ -1,7 +1,7 @@
 {% extends 'cecday/basic.html' %}
 {% block body %}
 
-project display
+
 <div class="container">
    
     <form method="POST" action="{% url 'project_display_register' %}" enctype="multipart/form-data">
@@ -161,6 +161,26 @@ project display
 
 <script>
     var uploadField = document.getElementById("file1");
+
+    uploadField.onchange = function () {
+        if (this.files[0].size > 2097152) {
+            alert("File is too big (max 2mb) !");
+            this.value = "";
+        };
+    };
+</script>
+<script>
+    var uploadField = document.getElementById("file3");
+
+    uploadField.onchange = function () {
+        if (this.files[0].size > 2097152) {
+            alert("File is too big (max 2mb) !");
+            this.value = "";
+        };
+    };
+</script>
+<script>
+    var uploadField = document.getElementById("file4");
 
     uploadField.onchange = function () {
         if (this.files[0].size > 2097152) {
